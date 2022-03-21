@@ -2,6 +2,7 @@
 
 This repo holds documentation and examples for deploying code on OpenShift 4.x and AWS to use as comparisons. 
 
+<<<<<<< HEAD
 # Client Tools
 
 All work is done using a Red Hat Enterprise Linux 8 client. 
@@ -80,3 +81,13 @@ terraform init
 terraform apply
 terraform destroy
 ```
+=======
+# Client
+
+All work is done using a Red Hat Enterprise Linux 8 client. 
+
+## AWS CLi 
+
+
+## Terrafrom
+>>>>>>> be0950abd3346720fd66d2d134a11a61aa598b39
