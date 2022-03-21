@@ -2,6 +2,8 @@
 
 This repo holds documentation and examples for deploying code on OpenShift 4.x and AWS to use as comparisons. 
 
+This README.md contains the essential notes on working with the examples in this repo, however the examples includes a static website using Pythons MkDocs that in itself contains more detailed documentation. 
+
 # Client Tools
 
 All work is done using a Red Hat Enterprise Linux 8 client. 
@@ -80,11 +82,47 @@ terraform init
 terraform apply
 terraform destroy
 ```
-# Client
-
-All work is done using a Red Hat Enterprise Linux 8 client. 
-
-## AWS CLi 
 
 
-## Terrafrom
+## MkDocs
+
+This project includes some documentation generated using MkDocs and provides a simple, yet practical working example for building and deploying an application.
+
+To work with the Python project locally:
+
+```
+cd mkdocs
+python3 -m venv venv
+. venv/bin/activate
+pip install -r requirements.txt
+```
+
+Export any require environment variables:
+
+```
+export MKDOCS_SITE_NAME='exampleforyou.net'
+```
+
+The site can be built using:
+
+```
+mkdocs build
+```
+
+## kubectl
+
+Download `kubectl`:
+
+```
+curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl
+chmod +x kubectl
+mv kubectl ~/bin
+```
+
+## eksctl
+
+```
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+sudo mv /tmp/eksctl /usr/local/bin
+eksctl version
+```

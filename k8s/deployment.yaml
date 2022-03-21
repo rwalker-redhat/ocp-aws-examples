@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eks-demo-mkdocs-deployment
+  namespace: eks-demo-app
+  labels:
+    app: eks-demo-mkdocs-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eks-demo-mkdocs-app
+  template:
+    metadata:
+      labels:
+        app: eks-demo-mkdocs-app
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/arch
+                operator: In
+                values:
+                - amd64
+      containers:
+      - name: nginx
+        image: 234497948785.dkr.ecr.eu-west-1.amazonaws.com/demo-mkdocs-img:1.0
+        ports:
+        - name: http
+          containerPort: 8080
+        imagePullPolicy: IfNotPresent
+      nodeSelector:
+        kubernetes.io/os: linux

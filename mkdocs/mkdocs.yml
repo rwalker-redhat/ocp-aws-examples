@@ -1,0 +1,29 @@
+site_name: !ENV [MKDOCS_SITE_NAME, 'Default site name']
+theme:
+  name: material
+  features: 
+    - navigation.indexes
+    - navigation.tabs
+use_directory_urls: false
+markdown_extensions: 
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+copyright: Copyright &copy; 2022 = Exampleforyou.net
+nav:
+  - Home: index.md
+  - AWS:
+    - AWS Command Line Interface:
+      - Getting Started: aws/getting_started.md
+      - Example Application: aws/eks_deployment.md
+      - Elastic Container Repository: aws/ecr.md
+      - Elastic Container Service for Kubernetes: aws/eks.md
+    - Terraform:
+      - Getting Started: terraform/getting_started.md
+extra:
+  homepage: http://localhost:8080
+site_dir: static-html
