@@ -50,7 +50,7 @@ spec:
                 - amd64
       containers:
       - name: nginx
-        image: 234497948785.dkr.ecr.eu-west-1.amazonaws.com/demo-mkdocs-img:1.0
+        image: ${AWS_ACCOUNT_ID}.dkr.ecr.eu-west-1.amazonaws.com/demo-mkdocs-img:1.0
         ports:
         - name: http
           containerPort: 8080

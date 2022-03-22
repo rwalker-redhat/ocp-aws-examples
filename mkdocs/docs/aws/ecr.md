@@ -3,7 +3,7 @@
 Export your Amazon account ID to an environment variable, for example:
 
 ``` text
-export AWS_ACCOUNT_ID='234497948785'
+export AWS_ACCOUNT_ID='0123456789'
 export AWS_REGION='eu-west-1'
 ```
 
